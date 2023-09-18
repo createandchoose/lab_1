@@ -1,2 +1,38 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+
+
+#include <iostream>
+#include <cmath>
+
+int main() {
+    double x1, y1, x2, y2, x3, y3;
+    double side_length, vector_AB_x, vector_AB_y, vector_BC_x, vector_BC_y;
+    double vector_CD_x, vector_CD_y, vector_length, normalized_vector_CD_x, normalized_vector_CD_y;
+    double x4, y4;
+
+    std::cout << "Введите координаты вершин квадрата A(x1, y1), B(x2, y2), C(x3, y3): ";
+    std::cin >> x1 >> y1 >> x2 >> y2 >> x3 >> y3;
+
+    side_length = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
+
+    vector_AB_x = x2 - x1;
+    vector_AB_y = y2 - y1;
+    vector_BC_x = x3 - x2;
+    vector_BC_y = y3 - y2;
+
+    vector_CD_x = vector_AB_x + vector_BC_x;
+    vector_CD_y = vector_AB_y + vector_BC_y;
+
+    vector_length = sqrt(pow(vector_CD_x, 2) + pow(vector_CD_y, 2));
+    normalized_vector_CD_x = vector_CD_x / vector_length;
+    normalized_vector_CD_y = vector_CD_y / vector_length;
+
+    x4 = x3 + side_length * normalized_vector_CD_x;
+    y4 = y3 + side_length * normalized_vector_CD_y;
+
+    std::cout << "Координаты вершины D(x4, y4): " << x4 << ", " << y4 << std::endl;
+
+    return 0;
+}
