@@ -36,3 +36,56 @@ int main() {
 
     return 0;
 }
+
+
+
+
+
+
+
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    // Ввод координат вершин квадрата
+    float x1, y1, x2, y2, x3, y3;
+    cout << "Введите координаты вершин квадрата A, B и C: " << endl;
+    cout << "x1 = ";
+    cin >> x1;
+    cout << "y1 = ";
+    cin >> y1;
+    cout << "x2 = ";
+    cin >> x2;
+    cout << "y2 = ";
+    cin >> y2;
+    cout << "x3 = ";
+    cin >> x3;
+    cout << "y3 = ";
+    cin >> y3;
+
+    // Находим координаты четвертой вершины
+    float x4, y4;
+    if (x1 == x2) {
+        x4 = x3;
+    } else if (x1 == x3) {
+        x4 = x2;
+    } else {
+        x4 = x1;
+    }
+
+    if (y1 == y2) {
+        y4 = y3;
+    } else if (y1 == y3) {
+        y4 = y2;
+    } else {
+        y4 = y1;
+    }
+
+    // Вывод координат четвертой вершины
+    cout << "Координаты четвертой вершины D: (" << x4 << ", " << y4 << ")" << endl;
+
+    return 0;
+}
+```
