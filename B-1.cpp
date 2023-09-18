@@ -6,7 +6,7 @@ int main() {
     std::cout << "Введите длину окружности: ";
     std::cin >> circumference;
 
-    const double pi = 3.14159265359; // Пи (можно воспользоваться библиотечной константой M_PI)
+    const double pi = 3.14159265359;
 
     double radius = circumference / (2 * pi);
 
