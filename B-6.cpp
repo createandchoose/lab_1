@@ -1,20 +1,20 @@
 #include <iostream>
+#include <cmath>
 
 int main() {
-    double A, B, C;
+    double side;
+    std::cout << "Введите длину стороны равностороннего треугольника: ";
+    std::cin >> side;
 
-    std::cout << "Введите длину одной из сторон первого прямоугольника (A): ";
-    std::cin >> A;
+    double area = (sqrt(3) / 4) * pow(side, 2);
+    double height = (sqrt(3) / 2) * side;
+    double inradius = side / (2 * sqrt(3));
+    double circumradius = side / sqrt(3);
 
-    std::cout << "Введите длину другой стороны первого прямоугольника (B): ";
-    std::cin >> B;
-
-    std::cout << "Введите длину одной из сторон второго прямоугольника (C): ";
-    std::cin >> C;
-
-    double D = (A * B * 6) / C;
-
-    std::cout << "Длина второй стороны второго прямоугольника (D): " << D << std::endl;
+    std::cout << "Площадь треугольника: " << area << std::endl;
+    std::cout << "Высота треугольника: " << height << std::endl;
+    std::cout << "Радиус вписанной окружности: " << inradius << std::endl;
+    std::cout << "Радиус описанной окружности: " << circumradius << std::endl;
 
     return 0;
 }
