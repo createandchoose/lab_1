@@ -1,22 +1,27 @@
 #include <iostream>
+#include <cmath>
+
+int findSixthDigit(int number) {
+    int sixthDigit = 0;
+    int numDigits = (int)log10(number) + 1;
+    
+    if (numDigits >= 6) {
+        int position = numDigits - 6;
+        
+        int divisor = pow(10, position); 
+        sixthDigit = (number / divisor) % 10; 
+    }
+    
+    return sixthDigit;
+}
 
 int main() {
-    int p, t, k;
+    int number;
+    std::cout << "Введите семи- или восьмизначное число: ";
+    std::cin >> number;
     
-    std::cout << "Введите номер квартиры: ";
-    std::cin >> p;
-    
-    std::cout << "Введите количество этажей в доме: ";
-    std::cin >> t;
-    
-    std::cout << "Введите количество квартир на лестничной площадке: ";
-    std::cin >> k;
-   
-    int entrance = (p - 1) / (k * t) + 1;
-    int floor = ((p - 1) / k) % t + 1;
-    
-    std::cout << "Номер подъезда: " << entrance << std::endl;
-    std::cout << "Этаж: " << floor << std::endl;
+    int sixthDigit = findSixthDigit(number);
+    std::cout << "Шестая цифра с конца: " << sixthDigit << std::endl;
     
     return 0;
 }
